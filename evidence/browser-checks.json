@@ -1,0 +1,26 @@
+[
+  {
+    "action": "confirm F001 and F003, then export",
+    "confirmed": 2,
+    "download": "evidence/export-two.csv",
+    "image": "assets/04-prototype.png"
+  },
+  {
+    "action": "change F001 to feature, then export",
+    "confirmed": 1,
+    "download": "evidence/export-one.csv",
+    "image": "assets/04-prototype-after-edit.png"
+  },
+  {
+    "action": "filter needs review",
+    "selected": "F007",
+    "confirmDisabled": true,
+    "count": 2
+  },
+  {
+    "action": "mobile viewport",
+    "viewport": 390,
+    "scrollWidth": 390,
+    "confirmed": "0"
+  }
+]

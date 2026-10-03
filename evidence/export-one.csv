@@ -1,0 +1,2 @@
+﻿"id","original_text","suggested_category","reviewed_category","review_status","suggestion_reason","related_ids"
+"F003","导出金额 12.50 变成 12，和后台对不上。","bug","bug","confirmed","给出了金额精度丢失的输入与输出示例，与 F001 指向相同问题。","[""F001""]"

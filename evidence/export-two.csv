@@ -1,0 +1,3 @@
+﻿"id","original_text","suggested_category","reviewed_category","review_status","suggestion_reason","related_ids"
+"F001","导出 CSV 后，订单金额的小数位被截掉了，月底对账只能手工改。","bug","bug","confirmed","描述了现有导出结果与原始金额不一致，并给出了具体使用影响。","[""F003""]"
+"F003","导出金额 12.50 变成 12，和后台对不上。","bug","bug","confirmed","给出了金额精度丢失的输入与输出示例，与 F001 指向相同问题。","[""F001""]"

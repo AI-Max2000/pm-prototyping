@@ -1,0 +1,106 @@
+{
+  "date": "2026-10-04",
+  "timezone": "Asia/Shanghai",
+  "execution_mode": "Codex directly read local SKILL.md and task-specific references, generated concrete artifacts, then reconciled shared contracts. Not an installed auto-trigger test.",
+  "scenario": "回声：用户反馈审核与导出",
+  "business_input_kind": "8 synthetic feedback records, no real customer data",
+  "classifier_mode": "preset category suggestions for UI demonstration; not a model benchmark",
+  "skills": [
+    {
+      "skill": "pm-prototyping",
+      "source_sha256": "0214a57ea2ae5a95ee5144af4ba964d6aef08155ac146f2a0c781ddbfc556685",
+      "file": "SKILL.md"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "assets/04-prototype-after-edit.png",
+      "source": "demo/prototype.html",
+      "width": 1280,
+      "height": 1061,
+      "capture": "ego-browser Chromium screenshot, unretouched",
+      "image_sha256": "4227098522e21e48b6c89ee170fcc0dbf94f6e583b6fa76005a5714fe23f7f32",
+      "source_sha256": "b46a89db9c5693741503e0ec65d8cc598917454077280dce598c056f48743dbf"
+    },
+    {
+      "file": "assets/04-prototype-mobile.png",
+      "source": "demo/prototype.html",
+      "width": 390,
+      "height": 1520,
+      "capture": "ego-browser Chromium screenshot, unretouched",
+      "image_sha256": "aa52504e044b43838a033470da35440efbc9d65fb7faac44fa5ccaaa06968c9b",
+      "source_sha256": "b46a89db9c5693741503e0ec65d8cc598917454077280dce598c056f48743dbf"
+    },
+    {
+      "file": "assets/04-prototype.png",
+      "source": "demo/prototype.html",
+      "width": 1280,
+      "height": 1061,
+      "capture": "ego-browser Chromium screenshot, unretouched",
+      "image_sha256": "817ec6ea864e37f20dea55fee09ce47db96d38a5dd393d722ff7110a82f1864b",
+      "source_sha256": "b46a89db9c5693741503e0ec65d8cc598917454077280dce598c056f48743dbf"
+    }
+  ],
+  "example": {
+    "file": "examples/04-原型与实测.md",
+    "sha256": "e4e9d8cdf4ce5655a27b66d64dca84978bb1954768e17ba7dd9b90a19545c49e"
+  },
+  "verification": "已在浏览器观察初始 8 条记录、2 条待判断、0 条确认，并实际验证键盘确认、待判断筛选，以及确认 F001/F003 后导出两条、改动 F001 后仅导出 F003；下载文件已回读。分类为预置建议，未接模型 API、批次导入或后台持久化；刷新恢复初始状态。未进行真实用户测试或生产验收。",
+  "not_claimed": [
+    "global skill auto-discovery",
+    "production deployment",
+    "real customer interviews",
+    "classifier accuracy benchmark",
+    "commercial efficiency improvement"
+  ],
+  "browser_checks": [
+    {
+      "action": "confirm F001 and F003, then export",
+      "confirmed": 2,
+      "download": "evidence/export-two.csv",
+      "image": "assets/04-prototype.png"
+    },
+    {
+      "action": "change F001 to feature, then export",
+      "confirmed": 1,
+      "download": "evidence/export-one.csv",
+      "image": "assets/04-prototype-after-edit.png"
+    },
+    {
+      "action": "filter needs review",
+      "selected": "F007",
+      "confirmDisabled": true,
+      "count": 2
+    },
+    {
+      "action": "mobile viewport",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "confirmed": "0"
+    }
+  ],
+  "csv_checks": [
+    {
+      "file": "evidence/export-two.csv",
+      "expected_ids": [
+        "F001",
+        "F003"
+      ],
+      "actual_ids": [
+        "F001",
+        "F003"
+      ],
+      "passed": true
+    },
+    {
+      "file": "evidence/export-one.csv",
+      "expected_ids": [
+        "F003"
+      ],
+      "actual_ids": [
+        "F003"
+      ],
+      "passed": true
+    }
+  ]
+}
